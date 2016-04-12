@@ -186,6 +186,7 @@ status_t PublicVolume::doUnmount() {
         mFusePid = 0;
     }
 
+    KillProcessesUsingPath(getPath());
     ForceUnmount(kAsecPath);
 
     ForceUnmount(mFuseDefault);
